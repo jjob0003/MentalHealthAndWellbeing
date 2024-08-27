@@ -1,8 +1,20 @@
+<script setup>
+import { ref } from 'vue';
+import Navbar from './Navbar.vue';
+  
+  const formData = ref({
+      username: '',
+      password: ''
+  });
+
+</script>
+
 <template>
+    <Navbar/>
     <div class ="container mt-5">
         <div class="row">
             <div class="col-md-8 offset-md-2">
-                <h1 class="text-center">Sign Up</h1>
+                <h1 class="text-center custom-font">Sign Up</h1>
                 <form @submit.prevent="submitForm">
                     <div class="row mb-3">
                         <div class="col-md-12">
@@ -15,7 +27,7 @@
                         </div>
                     </div>
                     <div class="text-center">
-                        <button type="submit"class="btn btn-primary me-2">Sign up</button>
+                        <button type="submit"class="btn btn-primary me-2" style="background-color: #1c4513;">Sign up</button>
                     </div>
                 </form>
             </div>
@@ -23,16 +35,10 @@
     </div>
 </template> 
 
-<script setup>
-import { ref } from 'vue';
-  
-  const formData = ref({
-      username: '',
-      password: ''
-  });
-
-</script>
-
 <style scoped>
+
+.custom-font{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 
 </style>

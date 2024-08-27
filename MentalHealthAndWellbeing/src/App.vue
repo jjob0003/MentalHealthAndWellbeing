@@ -1,10 +1,13 @@
 <script setup>
 import LoginForm from './components/LoginForm.vue';
 import CreateAccount from './components/CreateAccount.vue';
+import MainPage from './components/MainPage.vue';
 </script>
 
 <template>
   <LoginForm/>
+   <!-- <MainPage/> -->
+    <!-- <CreateAccount/> -->
 </template>
 
 <style scoped>
