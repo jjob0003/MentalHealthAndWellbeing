@@ -2,7 +2,7 @@
     <div class ="container mt-5">
         <div class="row">
             <div class="col-md-8 offset-md-2">
-                <h1 class="text-center">Log in</h1>
+                <h1 class="text-center">Sign Up</h1>
                 <form @submit.prevent="submitForm">
                     <div class="row mb-3">
                         <div class="col-md-12">
@@ -15,10 +15,7 @@
                         </div>
                     </div>
                     <div class="text-center">
-                        <button type="submit"class="btn btn-primary me-2">Log in</button>
-                    </div>
-                    <div class="text-center">
-                        <h6 class="mt-3">Don't have an account? <a href="https://www.google.com.au/">Sign Up here</a></h6>
+                        <button type="submit"class="btn btn-primary me-2">Sign up</button>
                     </div>
                 </form>
             </div>
