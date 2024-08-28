@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from 'vue';
-import Navbar from './Navbar.vue';
   
   const formData = ref({
       username: '',
@@ -10,7 +9,6 @@ import Navbar from './Navbar.vue';
 </script>
 
 <template>
-    <Navbar/>
     <div class ="container mt-5">
         <div class="row">
             <div class="col-md-8 offset-md-2">

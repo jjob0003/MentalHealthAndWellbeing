@@ -1,6 +1,6 @@
 <script setup>
 
-import Navbar from './Navbar.vue';
+import router from '@/router';
 
 import { ref } from 'vue';
   
@@ -12,7 +12,6 @@ import { ref } from 'vue';
 </script>
 
 <template>
-    <Navbar/>
     <div class ="container mt-5">
         <div class="row">
             <div class="col-md-8 offset-md-2">
@@ -32,7 +31,7 @@ import { ref } from 'vue';
                         <button type="submit"class="btn btn-primary me-2" style="background-color: #1c4513;">Log in</button>
                     </div>
                     <div class="text-center">
-                        <h5 class="mt-3 custom-font">Don't have an account? <a href="https://www.google.com.au/">Sign Up here</a></h5>
+                        <h5 class="mt-3 custom-font">Don't have an account? <router-link to="/CreateAccount">Sign Up here</router-link></h5>
                     </div>
                 </form>
             </div>
