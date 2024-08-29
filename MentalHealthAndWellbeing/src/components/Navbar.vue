@@ -1,7 +1,7 @@
 <template>
     <div class="col-md-12">
         <nav class="navbar navbar-expand-lg custom-color">
-            <h1 class="navbar-brand custom-font" style="padding: 1%;">Little Sanctuary</h1>
+            <h2 class="navbar-brand custom-font" style="padding: 1%;">Little Sanctuary</h2>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

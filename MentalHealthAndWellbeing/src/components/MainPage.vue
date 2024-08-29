@@ -1,5 +1,5 @@
 <template>
-    <Navbar/>
+    <!-- bootstrap -->
 </template>
 
 

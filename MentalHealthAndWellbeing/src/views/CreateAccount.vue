@@ -1,10 +1,23 @@
 <script setup>
 import { ref } from 'vue';
-  
-  const formData = ref({
+
+    const userInput = ref({
+      firstName: '',
+      lastName: '',
+      emailID: '',
+      gender: '',
       username: '',
       password: ''
-  });
+    });
+
+    const errors = ref({
+      firstName: null,
+      lastName: null,
+      emailID: null,
+      gender: null,
+      username: null,
+      password: null
+    });
 
 </script>
 
@@ -13,21 +26,19 @@ import { ref } from 'vue';
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <h1 class="text-center custom-font">Sign Up</h1>
-                <form @submit.prevent="submitForm">
                     <div class="row mb-3">
-                        <div class="col-md-12">
+                        <div class="col-md-8 offset-md-2">
                             <label for="username" class="form-label">Username</label>
-                            <input type="text" class="form-control" id="username" v-model="formData.username">
+                            <input type="text" class="form-control" id="username" v-model="userInput.username">
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-8 offset-md-2">
                             <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password" v-model="formData.password">
+                            <input type="password" class="form-control" id="password" v-model="userInput.password">
                         </div>
                     </div>
-                    <div class="text-center">
-                        <button type="submit"class="btn btn-primary me-2" style="background-color: #1c4513;">Sign up</button>
-                    </div>
-                </form>
+                </div>
+                <div class="text-center">
+                    <button type="submit"class="btn btn-primary me-2" style="background-color: #1c4513;">Sign up</button>
             </div>
         </div>
     </div>
