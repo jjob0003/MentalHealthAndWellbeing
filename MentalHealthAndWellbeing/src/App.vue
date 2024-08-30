@@ -1,6 +1,7 @@
 <script setup>
 import router from './router'
 import Navbar from './components/Navbar.vue';
+import MainPage from './components/MainPage.vue';
 
 </script>
 
@@ -9,6 +10,7 @@ import Navbar from './components/Navbar.vue';
    <!-- <MainPage/> -->
     <!-- <CreateAccount/> -->
      <Navbar></Navbar>
+     <MainPage></MainPage>
     <router-view></router-view>
 </template>
 

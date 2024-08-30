@@ -29,6 +29,9 @@
                 </ul>
             </div>
         </nav>
+        <!-- <nav class="navbar navbar-expand-lg custom-new">
+
+        </nav> -->
         </div>
 </template>
 
@@ -38,12 +41,18 @@
 
 <style scoped>
 .custom-color{
-    background-color: #1c4513;
+    /* background-color: #1c4513; */
+    background-color: #515b49;
 }
 
 .custom-font{
     color: whitesmoke;
     font-family: fantasy;
 }
+
+/* .custom-new{
+    color: aliceblue;
+    min-height: 4cap;
+} */
 
 </style>
