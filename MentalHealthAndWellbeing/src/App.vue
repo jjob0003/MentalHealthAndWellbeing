@@ -11,7 +11,7 @@ import MainPage from './components/MainPage.vue';
     <!-- <CreateAccount/> -->
      <Navbar></Navbar>
      <MainPage></MainPage>
-    <router-view></router-view>
+    <!-- <router-view></router-view> -->
 </template>
 
 <style scoped>
