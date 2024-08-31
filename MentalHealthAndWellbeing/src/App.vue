@@ -10,8 +10,8 @@ import MainPage from './components/MainPage.vue';
    <!-- <MainPage/> -->
     <!-- <CreateAccount/> -->
      <Navbar></Navbar>
-     <MainPage></MainPage>
-    <!-- <router-view></router-view> -->
+     <!-- <MainPage></MainPage> -->
+    <router-view></router-view>
 </template>
 
 <style scoped>
