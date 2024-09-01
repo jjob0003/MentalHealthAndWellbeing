@@ -7,7 +7,8 @@ import { ref } from 'vue';
       emailID: '',
       gender: '',
       username: '',
-      password: ''
+      password: '',
+      role: ''
     });
 
     const errors = ref({
@@ -16,7 +17,8 @@ import { ref } from 'vue';
       emailID: null,
       gender: null,
       username: null,
-      password: null
+      password: null,
+      role: null
     });
 
     const validateUsername = (blur) => {
@@ -50,11 +52,21 @@ import { ref } from 'vue';
         }
     }
 
+    const submitDetails = (blur) => {
+        // console.log('Done!')
+
+        //send data to firebase
+
+        //redirect to login page (router)
+
+    }
+
 </script>
 
 <template>
     <div class ="container mt-5">
         <div class="row">
+            <form @submit.prevent="submitDetails"> 
             <div class="col-md-8 offset-md-2">
                 <h1 class="text-center custom-font">Sign Up</h1>
                     <div class="row mb-3">
@@ -72,7 +84,7 @@ import { ref } from 'vue';
                         </div>
                         <div class="col-md-6">
                             <label for="gender" class="form-label">Gender</label>
-                            <select class="form-select" id="gender" v-model="userInput.gender">
+                            <select class="form-select" id="gender" v-model="userInput.gender" required>
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
                                 <option value="other">Other</option>
@@ -95,11 +107,19 @@ import { ref } from 'vue';
                             v-model="userInput.password">
                             <div v-if="errors.password" class="text-danger">{{ errors.password }}</div>
                         </div>
+                        <div class="col-md-6 offset-md-3">
+                            <label for="role" class="form-label">Sign up as a</label>
+                            <select class="form-select" id="role" v-model="userInput.role" required>
+                                <option value="user">User</option>
+                                <option value="staff">Staff</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <div class="text-center">
                     <button type="submit"class="btn btn-primary me-2" style="background-color: #1c4513;">Sign up</button>
             </div>
+        </form>
         </div>
     </div>
 </template> 

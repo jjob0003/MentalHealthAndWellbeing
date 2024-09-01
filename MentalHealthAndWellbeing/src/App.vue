@@ -1,16 +1,11 @@
 <script setup>
 import router from './router'
 import Navbar from './components/Navbar.vue';
-import MainPage from './components/MainPage.vue';
 
 </script>
 
 <template>
-  <!-- <LoginForm></LoginForm> -->
-   <!-- <MainPage/> -->
-    <!-- <CreateAccount/> -->
-     <Navbar></Navbar>
-     <!-- <MainPage></MainPage> -->
+    <Navbar></Navbar>
     <router-view></router-view>
 </template>
 

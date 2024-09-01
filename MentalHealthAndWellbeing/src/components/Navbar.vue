@@ -8,10 +8,10 @@
                         <router-link class="nav-link custom-font" to="/">Home</router-link >
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link custom-font" href="#">About</a>
+                        <router-link  class="nav-link custom-font" to="/About">About</router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link custom-font" href="#">Donate</a>
+                        <router-link class="nav-link custom-font" to="/Donate">Donate</router-link>
                     </li>
                     <li class="nav-item">
                         <router-link class="nav-link custom-font" to="/LoginForm">Login</router-link>
@@ -20,7 +20,7 @@
                         <router-link class="nav-link custom-font" to="/CreateAccount">Sign Up</router-link>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link custom-font" href="#">Emergency help</a>
+                        <router-link class="nav-link custom-font" to="/EmergencyPage">Emergency help</router-link>
                     </li>
                 </ul>
             </div>

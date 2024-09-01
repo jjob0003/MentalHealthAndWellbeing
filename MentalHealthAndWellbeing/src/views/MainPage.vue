@@ -54,7 +54,7 @@
 
     <div class="container-fluid col-md-12" style="height: 130px;">
     </div>
-    <div class="container-fluid col-md-12" style="height: 150px; background-color: #1c4513;">
+    <div class="container-fluid col-md-12" style="height: 150px; background-color: #515b49;">
     </div>
 
 </template>
