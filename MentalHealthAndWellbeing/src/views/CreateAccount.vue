@@ -55,7 +55,7 @@ import { ref } from 'vue';
     const submitDetails = (blur) => {
         // console.log('Done!')
 
-        //send data to firebase
+        //send data to datatable
 
         //redirect to login page (router)
 
@@ -80,7 +80,7 @@ import { ref } from 'vue';
                         </div>
                         <div class="col-md-6">
                             <label for="emailID" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="emailID" v-model="userInput.emailID">
+                            <input type="email" class="form-control" id="emailID" v-model="userInput.emailID" required>
                         </div>
                         <div class="col-md-6">
                             <label for="gender" class="form-label">Gender</label>

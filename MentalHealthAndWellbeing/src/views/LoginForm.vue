@@ -43,6 +43,12 @@ import { ref } from 'vue';
         }
     }
 
+    function checkUser(){
+        //check if user is in datatable
+
+        //redirect to page according to user role
+    }
+
 </script>
 
 <template>
