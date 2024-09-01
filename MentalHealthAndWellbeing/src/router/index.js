@@ -9,7 +9,7 @@ import About from '@/views/About.vue'
 const routes = [
   {
     path: '/',
-    name: 'Main',
+    name: 'MainPage',
     component: MainPage
   },
   {

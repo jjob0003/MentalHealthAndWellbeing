@@ -1,5 +1,7 @@
 <script setup>
 import { ref } from 'vue';
+import { useStore } from 'vuex';
+import router from '@/router';
 
     const userInput = ref({
       firstName: '',
@@ -52,12 +54,13 @@ import { ref } from 'vue';
         }
     }
 
-    const submitDetails = (blur) => {
-        // console.log('Done!')
-
-        //send data to datatable
-
+    const store = useStore();
+    
+    const submitDetails = () => {
+        
+        store.dispatch('addNew', userInput.value);
         //redirect to login page (router)
+        router.push('/LoginForm')
 
     }
 
