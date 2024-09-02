@@ -10,9 +10,9 @@
             <h3>If you require immediate assistance here are some options that are available</h3>
         </div>
 </div>
-<div class="container-fluid col-md-12 text-center custom-font" style="height: 200px; margin-top: 10%; background-color: #ecf3f9;">
+<div class="container-fluid col-md-12 text-center custom-font" style="height: 180px; margin-top: 10%; background-color: #ecf3f9;">
         <div style="padding-top: 4%;">
-            <h1>Please call triple zero (000) if you are at risk of harm or someone you know is at risk of harm.</h1>
+            <h2>Please call triple zero (000) if you are at risk of harm or someone you know is at risk of harm.</h2>
         </div>
 </div>
 
