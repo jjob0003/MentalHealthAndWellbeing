@@ -4,8 +4,8 @@ import LoginForm from '@/views/LoginForm.vue'
 import MainPage from '@/views/MainPage.vue'
 import EmergencyPage from '@/views/EmergencyPage.vue'
 import About from '@/views/About.vue'
-import StaffDashboard from '@/views/staffDashboard.vue'
-import UserDashboard from '@/views/userDashboard.vue'
+import StaffDashboard from '@/views/StaffDashboard.vue'
+import UserDashboard from '@/views/UserDashboard.vue'
 
 const routes = [
   {
