@@ -11,9 +11,6 @@
                         <router-link  class="nav-link custom-font" to="/About">About</router-link>
                     </li>
                     <li class="nav-item">
-                        <router-link class="nav-link custom-font" to="/Donate">Donate</router-link>
-                    </li>
-                    <li class="nav-item">
                         <router-link class="nav-link custom-font" to="/LoginForm">Login</router-link>
                     </li>
                     <li class="nav-item">

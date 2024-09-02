@@ -2,9 +2,10 @@ import { createRouter, createWebHistory } from 'vue-router'
 import CreateAccount from '@/views/CreateAccount.vue'
 import LoginForm from '@/views/LoginForm.vue'
 import MainPage from '@/views/MainPage.vue'
-import Donate from '@/views/Donate.vue'
 import EmergencyPage from '@/views/EmergencyPage.vue'
 import About from '@/views/About.vue'
+import StaffDashboard from '@/views/staffDashboard.vue'
+import UserDashboard from '@/views/userDashboard.vue'
 
 const routes = [
   {
@@ -23,11 +24,6 @@ const routes = [
     component: CreateAccount
   },
   {
-    path: '/Donate',
-    name: 'Donate',
-    component: Donate
-  },
-  {
     path: '/EmergencyPage',
     name: 'Emergency',
     component: EmergencyPage
@@ -36,7 +32,17 @@ const routes = [
     path: '/About',
     name: 'About',
     component: About
-  }
+  },
+  {
+    path: '/staffDashboard',
+    name: 'staffDashboard',
+    component: StaffDashboard
+  },
+  {
+    path: '/userDashboard',
+    name: 'userDashboard',
+    component: UserDashboard
+  },
 ]
 
 const router = createRouter({

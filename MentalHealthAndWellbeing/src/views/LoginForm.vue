@@ -1,6 +1,8 @@
 <script setup>
 
+import router from '@/router';
 import { ref } from 'vue';
+import { useStore } from 'vuex';
   
   const userInput = ref({
       username: '',
@@ -43,38 +45,66 @@ import { ref } from 'vue';
         }
     }
 
+    const store = useStore();
+
+    const checkUser = () => {
+        //check if username and password in array
+        const allUserData = store.state.userDetailsArray;
+        const checkUserData = allUserData.filter(user => user.username == userInput.value.username && user.password == userInput.value.password)
+
+        if(checkUserData.length == 1){
+            const user = checkUserData[0];
+            
+            if(user.role == 'staff'){
+                //route to staff page
+                router.push('/staffDashboard')
+            }
+            else if(user.role == 'user'){
+                //route to user page 
+                router.push('/userDashboard')
+            }
+        }else {
+            console.log('Error! Username or Password not found')
+
+            userInput.value.username = errors.value.username;
+            userInput.value.password = errors.value.password;
+        }
+    }
+
 </script>
 
 <template>
     <div class ="container mt-5">
         <div class="row">
-            <div class="col-md-8 offset-md-2">
-                <h1 class="text-center custom-font">Log in</h1>
-                    <div class="row mb-3">
-                        <div class="col-md-8 offset-md-2">
-                            <label for="username" class="form-label">Username</label>
-                            <input type="text" class="form-control" id="username" 
-                            @blur="() => validateUsername(true)"
-                            @input="() => validateUsername(false)"
-                            v-model="userInput.username">
-                            <div v-if="errors.username" class="text-danger"> {{ errors.username }} </div>
+            <form @submit.prevent="checkUser"> 
+                <div class="col-md-8 offset-md-2">
+                    <h1 class="text-center custom-font">Log in</h1>
+                        <div class="row mb-3">
+                            <div class="col-md-8 offset-md-2">
+                                <label for="username" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="username" 
+                                @blur="() => validateUsername(true)"
+                                @input="() => validateUsername(false)"
+                                v-model="userInput.username">
+                                <div v-if="errors.username" class="text-danger"> {{ errors.username }} </div>
+                            </div>
+                            <div class="col-md-8 offset-md-2">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" 
+                                @blur="() => validatePassword(true)"
+                                @input="() => validatePassword(false)"
+                                v-model="userInput.password">
+                                <div v-if="errors.password" class="text-danger">{{ errors.password }}</div>
+                            </div>
                         </div>
-                        <div class="col-md-8 offset-md-2">
-                            <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password" 
-                            @blur="() => validatePassword(true)"
-                            @input="() => validatePassword(false)"
-                            v-model="userInput.password">
-                            <div v-if="errors.password" class="text-danger">{{ errors.password }}</div>
+                        <div class="text-center">
+                            <button type="submit"class="btn btn-primary me-2" style="background-color: #1c4513;">Log in</button>
                         </div>
-                    </div>
-                    <div class="text-center">
-                        <button type="submit"class="btn btn-primary me-2" style="background-color: #1c4513;">Log in</button>
-                    </div>
-                    <div class="text-center">
-                        <h5 class="mt-3 custom-font">Don't have an account? <router-link to="/CreateAccount">Sign Up here</router-link></h5>
-                    </div>
-            </div>
+                        <div class="text-center">
+                            <h5 class="mt-3 custom-font">Don't have an account? <router-link to="/CreateAccount">Sign Up here</router-link></h5>
+                        </div>
+                </div>
+            </form>
         </div>
     </div>
 </template> 
