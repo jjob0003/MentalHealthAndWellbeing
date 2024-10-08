@@ -20,21 +20,33 @@
             <h3>Logged in as staff</h3>
         </div>
         <div style="padding-top: 8%;">
-            <h1>Staff Dashboard</h1>
+            <h1>Staff Dashboard -name</h1>
         </div>
 </div>
 
 <div class="container-fluid col-md-12 text-center custom-font" style="height: 100px;">
     </div>
     <div class="row">
-        <div class="container-fluid col-md-3 text-center custom-font" style="height: 150px; background-color: #ecf3f9; border-style: groove;">
-                <h2 style="padding-top: 5%;">View your schedule</h2>
+        <div class="container-fluid col-md-3 text-center custom-font" style="height: auto; background-color: #ecf3f9;">
+            <div class="container-fluid">
+                <img src="@/assets/emailimg.jpg" class="img-fluid" alt="email icon" style="margin-top: 8%;">
+            </div>
+            <h2 style="padding-top: 5%;">Emails</h2>
+            <h5>Check and manage your emails here</h5>
         </div>
-        <div class="container-fluid col-md-3 text-center custom-font" style="height: 150px; background-color: #ecf3f9; border-style: groove;">
-                <h2 style="padding-top: 5%;">Patient records</h2>
+        <div class="container-fluid col-md-3 text-center custom-font" style="height: auto; background-color: #ecf3f9;">
+            <div class="container-fluid">
+                <img src="@/assets/recordimg.jpg" class="img-fluid" alt="records icon" style="margin-top: 8%;">
+            </div>  
+            <h2 style="padding-top: 5%;">Patient records</h2>
+            <h5>Look up patient records</h5>
         </div>
-        <div class="container-fluid col-md-3 text-center custom-font" style="height: 150px; background-color: #ecf3f9; border-style: groove;">
-                <h2 style="padding-top: 5%;">Manage your appointments</h2>
+        <div class="container-fluid col-md-3 text-center custom-font" style="height: auto; background-color: #ecf3f9;">
+            <div class="container-fluid">
+                <img src="@/assets/apptimage.jpg" class="img-fluid" alt="appointment schedule icon" style="margin-top: 8%;">
+            </div>      
+            <h2 style="padding-top: 5%;">Manage your appointments</h2>
+            <h5>Manage your schedule and patient appointments here</h5>
         </div>
     </div>
 
