@@ -34,7 +34,7 @@
                 <h2 style="padding-top: 5%;">Book a new appointment now</h2>
         </div>
         <div class="container-fluid col-md-3 text-center custom-font" style="height: 150px; background-color: #ecf3f9; border-style: groove;">
-                <h2 style="padding-top: 5%;">Reports</h2>
+                <h2 style="padding-top: 5%;">Your Reports</h2>
         </div>
     </div>
 
