@@ -1,26 +1,20 @@
 <script setup>
 
 import router from '@/router';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { ref } from 'vue';
 import { useStore } from 'vuex';
   
   const userInput = ref({
-      username: '',
+      email: '',
       password: ''
   });
 
   const errors = ref({
-    username: null,
+    email: null,
     password: null
   })
 
-  const validateUsername = (blur) => {
-    if(userInput.value.username.length <= 3){
-        if(blur) errors.value.username = "Error! Username must be over 3 characters long";
-    }else{
-        errors.value.username = null;
-    }
-    }
 
     const validatePassword = (blur) => {
         const password = userInput.value.password;
@@ -45,31 +39,40 @@ import { useStore } from 'vuex';
         }
     }
 
-    const store = useStore();
+    // const store = useStore();
+    const auth = getAuth()
 
     const checkUser = () => {
-        //check if username and password in array
-        const allUserData = store.state.userDetailsArray;
-        const checkUserData = allUserData.filter(user => user.username == userInput.value.username && user.password == userInput.value.password)
+        // const allUserData = store.state.userDetailsArray;
+        // const checkUserData = allUserData.filter(user => user.username == userInput.value.username && user.password == userInput.value.password)
 
-        if(checkUserData.length == 1){
-            const user = checkUserData[0];
+        // if(checkUserData.length == 1){
+        //     const user = checkUserData[0];
             
-            if(user.role == 'staff'){
-                //route to staff page
-                router.push('/staffDashboard')
-            }
-            else if(user.role == 'user'){
-                //route to user page 
-                router.push('/userDashboard')
-            }
-        }else {
-            console.log('Error! Username or Password not found')
+        //     if(user.role == 'staff'){
+        //         //route to staff page
+        //         router.push('/staffDashboard')
+        //     }
+        //     else if(user.role == 'user'){
+        //         //route to user page 
+        //         router.push('/userDashboard')
+        //     }
+        // }else {
+        //     console.log('Error! Username or Password not found')
 
-            userInput.value.username = errors.value.username;
-            userInput.value.password = errors.value.password;
-        }
-    }
+        //     userInput.value.username = errors.value.username;
+        //     userInput.value.password = errors.value.password;
+        // }
+
+        signInWithEmailAndPassword(auth, userInput.value.email, userInput.value.password)
+        .then((data) => {
+            console.log("Sign in successful!")
+            // router.push('/staffDashboard')
+            console.log(auth.currentUser) //change
+        }).catch((error) => {
+            console.log(error.code);
+        })
+    };
 
 </script>
 
@@ -81,12 +84,8 @@ import { useStore } from 'vuex';
                     <h1 class="text-center custom-font">Log in</h1>
                         <div class="row mb-3">
                             <div class="col-md-8 offset-md-2">
-                                <label for="username" class="form-label">Username</label>
-                                <input type="text" class="form-control" id="username" 
-                                @blur="() => validateUsername(true)"
-                                @input="() => validateUsername(false)"
-                                v-model="userInput.username">
-                                <div v-if="errors.username" class="text-danger"> {{ errors.username }} </div>
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" v-model="userInput.email" required>
                             </div>
                             <div class="col-md-8 offset-md-2">
                                 <label for="password" class="form-label">Password</label>

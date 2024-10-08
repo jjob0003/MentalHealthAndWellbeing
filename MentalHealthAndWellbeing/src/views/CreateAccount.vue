@@ -2,11 +2,12 @@
 import { ref } from 'vue';
 import { useStore } from 'vuex';
 import router from '@/router';
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 
     const userInput = ref({
       firstName: '',
       lastName: '',
-      emailID: '',
+      email: '',
       gender: '',
       username: '',
       password: '',
@@ -16,7 +17,7 @@ import router from '@/router';
     const errors = ref({
       firstName: null,
       lastName: null,
-      emailID: null,
+      email: null,
       gender: null,
       username: null,
       password: null,
@@ -54,15 +55,23 @@ import router from '@/router';
         }
     }
 
-    const store = useStore();
+    // const store = useStore();
+    const auth = getAuth()
+
     
     const submitDetails = () => {
         
-        store.dispatch('addNew', userInput.value);
-        //redirect to login page (router)
-        router.push('/LoginForm')
+        // store.dispatch('addNew', userInput.value);
+        // router.push('/LoginForm')
 
-    }
+        createUserWithEmailAndPassword(auth, userInput.value.email, userInput.value.password)
+        .then((data) => {
+            console.log("Registered succesfully!")
+            router.push('/LoginForm')
+        }).catch((error) => {
+            console.log(error.code);
+        })
+    };
 
     
 
@@ -84,8 +93,8 @@ import router from '@/router';
                             <input type="text" class="form-control" id="lastName" v-model="userInput.lastName">
                         </div>
                         <div class="col-md-6">
-                            <label for="emailID" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="emailID" v-model="userInput.emailID" required>
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" v-model="userInput.email" required>
                         </div>
                         <div class="col-md-6">
                             <label for="gender" class="form-label">Gender</label>
