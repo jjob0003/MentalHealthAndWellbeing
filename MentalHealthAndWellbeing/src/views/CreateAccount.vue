@@ -3,6 +3,8 @@ import { ref } from 'vue';
 import { useStore } from 'vuex';
 import router from '@/router';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+import db from '@/firebase/init';
+import { collection, addDoc } from 'firebase/firestore';
 
     const userInput = ref({
       firstName: '',
@@ -59,18 +61,31 @@ import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
     const auth = getAuth()
 
     
-    const submitDetails = () => {
+    const submitDetails = async () => {
         
         // store.dispatch('addNew', userInput.value);
         // router.push('/LoginForm')
 
-        createUserWithEmailAndPassword(auth, userInput.value.email, userInput.value.password)
-        .then((data) => {
-            console.log("Registered succesfully!")
-            router.push('/LoginForm')
-        }).catch((error) => {
-            console.log(error.code);
-        })
+        try{
+            await addDoc(collection(db, 'users'),{
+                firstName: userInput.value.firstName,
+                lastName: userInput.value.lastName,
+                email: userInput.value.email,
+                gender: userInput.value.gender,
+                username: userInput.value.username,
+                password: userInput.value.password,
+                role: userInput.value.role
+            });
+            createUserWithEmailAndPassword(auth, userInput.value.email, userInput.value.password)
+            .then((data) => {
+                console.log("Registered succesfully!")
+                router.push('/LoginForm')
+            }).catch((error) => {
+                console.log(error.code);
+            })
+        }catch(error){
+            console.error('Error recording user input', error);
+        }
     };
 
     
