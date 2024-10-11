@@ -4,6 +4,8 @@ import router from '@/router';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { ref } from 'vue';
 import { useStore } from 'vuex';
+import db from '@/firebase/init';
+import { collection, query, where, getDocs, doc } from 'firebase/firestore';
   
   const userInput = ref({
       email: '',
@@ -42,36 +44,36 @@ import { useStore } from 'vuex';
     // const store = useStore();
     const auth = getAuth()
 
-    const checkUser = () => {
-        // const allUserData = store.state.userDetailsArray;
-        // const checkUserData = allUserData.filter(user => user.username == userInput.value.username && user.password == userInput.value.password)
-
-        // if(checkUserData.length == 1){
-        //     const user = checkUserData[0];
-            
-        //     if(user.role == 'staff'){
-        //         //route to staff page
-        //         router.push('/staffDashboard')
-        //     }
-        //     else if(user.role == 'user'){
-        //         //route to user page 
-        //         router.push('/userDashboard')
-        //     }
-        // }else {
-        //     console.log('Error! Username or Password not found')
-
-        //     userInput.value.username = errors.value.username;
-        //     userInput.value.password = errors.value.password;
-        // }
-
-        signInWithEmailAndPassword(auth, userInput.value.email, userInput.value.password)
-        .then((data) => {
+    const checkUser = async () => {
+        try{
+            signInWithEmailAndPassword(auth, userInput.value.email, userInput.value.password)
+        .then(async(data) => {
             console.log("Sign in successful!")
-            // router.push('/staffDashboard')
-            console.log(auth.currentUser) //change
+
+            const q = query(collection(db, 'users'), where('email', '==', auth.currentUser.email));
+            const querySnapshot = await getDocs(q);
+
+            querySnapshot.forEach((doc) => {
+                const userDoc = doc.data();
+
+                if(userDoc.role == "staff"){
+                    router.push('/staffDashboard')
+                } else if(userDoc.role == "user"){
+                    router.push('/userDashboard')
+                } else{
+                    console.log('Error! Username or Password not found')
+                    userInput.value.username = errors.value.username;
+                    userInput.value.password = errors.value.password;
+                }
+            });
         }).catch((error) => {
             console.log(error.code);
         })
+
+        } catch(error){
+            console.error('Error logging in');
+        }
+
     };
 
 </script>
