@@ -5,7 +5,8 @@ import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { ref } from 'vue';
 import { useStore } from 'vuex';
 import db from '@/firebase/init';
-import { collection, query, where, getDocs, doc } from 'firebase/firestore';
+import { collection, query, where, getDocs, addDoc } from 'firebase/firestore';
+import MockData from '@/MockData/MockData.json';
   
   const userInput = ref({
       email: '',
@@ -74,7 +75,28 @@ import { collection, query, where, getDocs, doc } from 'firebase/firestore';
             console.error('Error logging in');
         }
 
+        // saveMockData();
     };
+
+    // const saveMockData = async () => {
+
+    //     try{
+    //         MockData.forEach(async(user) => {
+    //             await addDoc(collection(db, 'users'),{
+    //             firstName: user.firstName,
+    //             lastName: user.lastName,
+    //             email: user.email,
+    //             gender: user.gender,
+    //             username: user.username,
+    //             password: user.password,
+    //             role: user.role
+    //         });
+    //         });
+    //         console.log('success!')
+    //     }catch(error){
+    //         console.error('Error!', error);
+    //     }
+    // };
 
 </script>
 
