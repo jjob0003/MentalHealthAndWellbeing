@@ -9,6 +9,7 @@ import UserDashboard from '@/views/UserDashboard.vue'
 import PatientRecords from '@/views/PatientRecords.vue'
 import UserReports from '@/views/UserReports.vue'
 import ClinicMap from '@/views/ClinicMap.vue'
+import SendEmails from '@//views/SendEmails.vue'
 
 const routes = [
   {
@@ -60,6 +61,11 @@ const routes = [
     path: '/ClinicMap',
     name: 'ClinicMap',
     component: ClinicMap
+  },
+  {
+    path: '/SendEmails',
+    name: 'SendEmails',
+    component: SendEmails
   },
 ]
 

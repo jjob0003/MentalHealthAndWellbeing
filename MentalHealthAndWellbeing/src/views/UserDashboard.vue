@@ -20,7 +20,7 @@
             <h3>Logged in as user</h3>
         </div>
         <div style="padding-top: 8%;">
-            <h1>Dashboard</h1>
+            <h1>Dashboard- user</h1>
         </div>
 </div>
 
@@ -28,11 +28,13 @@
     </div>
     <div class="row">
         <div class="container-fluid col-md-3 text-center custom-font" style="height: auto; background-color: #ecf3f9;">
-            <div class="container-fluid">
+            <router-link class="custom-font" to="/SendEmails">
+                <div class="container-fluid">
                 <img src="@/assets/emailimg.jpg" class="img-fluid" alt="email icon" style="margin-top: 8%;">
-            </div>
-            <h2 style="padding-top: 5%;">Emails</h2>
-            <h5>Check and manage your emails here</h5>
+                </div>
+                <h2 style="padding-top: 5%;">Emails</h2>
+                <h5>Check and manage your emails here</h5>
+            </router-link>
         </div>
         <div class="container-fluid col-md-3 text-center custom-font" style="height: auto; background-color: #ecf3f9;">
             <router-link class="custom-font" to="/ClinicMap">

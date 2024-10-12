@@ -1,5 +1,7 @@
 <script>
+import { placeholder } from '@mapbox/mapbox-gl-geocoder/lib/localization';
 import mapboxgl from 'mapbox-gl';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import { ref, onMounted } from 'vue';
 mapboxgl.accessToken = 'pk.eyJ1IjoiamFuaWNlLXgiLCJhIjoiY20yNm5kMjZhMGNiNTJrb2s0aWszZnRobCJ9.7PpDYzmVIV0ippBBIh945A';
 
@@ -15,7 +17,18 @@ export default {
                 center: [145.1275, -37.9145],
                 zoom: 9,
             });
-        });
+
+            const geocoder = new MapboxGeocoder({
+     
+                accessToken: mapboxgl.accessToken, 
+                mapboxgl: mapboxgl, 
+                marker: false,
+                placeholder: 'Search for places',
+                });
+
+                map.addControl(geocoder);
+
+            });
 
         return{
             mapContainer
@@ -42,4 +55,5 @@ export default {
   height: 600px;
   width: 100%;
 }
+
 </style>
