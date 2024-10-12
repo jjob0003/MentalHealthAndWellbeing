@@ -46,7 +46,7 @@ export default{
             Patient Records 
         </h1>
     </div>
-    <DataTable :value="allUsers">
+    <DataTable :value="allUsers" paginator :rows="10" :rowsPerPageOptions="[5, 10, 20, 50]">
         <Column field="firstName" header="First Name"></Column>
         <Column field="lastName" header="Last Name"></Column>
         <Column field="email" header="Email"></Column>

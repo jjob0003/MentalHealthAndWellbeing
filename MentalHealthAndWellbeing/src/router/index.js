@@ -8,6 +8,7 @@ import StaffDashboard from '@/views/StaffDashboard.vue'
 import UserDashboard from '@/views/UserDashboard.vue'
 import PatientRecords from '@/views/PatientRecords.vue'
 import UserReports from '@/views/UserReports.vue'
+import ClinicMap from '@/views/ClinicMap.vue'
 
 const routes = [
   {
@@ -54,7 +55,12 @@ const routes = [
     path: '/UserReports',
     name: 'UserReports',
     component: UserReports
-  }
+  },
+  {
+    path: '/ClinicMap',
+    name: 'ClinicMap',
+    component: ClinicMap
+  },
 ]
 
 const router = createRouter({
