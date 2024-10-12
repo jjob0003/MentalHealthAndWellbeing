@@ -27,14 +27,26 @@
 <div class="container-fluid col-md-12 text-center custom-font" style="height: 100px;">
     </div>
     <div class="row">
-        <div class="container-fluid col-md-3 text-center custom-font" style="height: 150px; background-color: #ecf3f9; border-style: groove;">
-                <h2 style="padding-top: 5%;">View your upcoming appointments</h2>
+        <div class="container-fluid col-md-3 text-center custom-font" style="height: auto; background-color: #ecf3f9;">
+            <div class="container-fluid">
+                <img src="@/assets/emailimg.jpg" class="img-fluid" alt="email icon" style="margin-top: 8%;">
+            </div>
+            <h2 style="padding-top: 5%;">Emails</h2>
+            <h5>Check and manage your emails here</h5>
         </div>
-        <div class="container-fluid col-md-3 text-center custom-font" style="height: 150px; background-color: #ecf3f9; border-style: groove;">
-                <h2 style="padding-top: 5%;">Book a new appointment now</h2>
+        <div class="container-fluid col-md-3 text-center custom-font" style="height: auto; background-color: #ecf3f9;">
+            <div class="container-fluid">
+                <img src="@/assets/directions.jpg" class="img-fluid" alt="map icon" style="margin-top: 8%;">
+            </div>
+            <h2 style="padding-top: 5%;">Find a mental health clinic near you</h2>
+            <h5>Find mental health support service locations near you using our maps</h5>
         </div>
-        <div class="container-fluid col-md-3 text-center custom-font" style="height: 150px; background-color: #ecf3f9; border-style: groove;">
-                <h2 style="padding-top: 5%;">Your Reports</h2>
+        <div class="container-fluid col-md-3 text-center custom-font" style="height: auto; background-color: #ecf3f9;">
+            <div class="container-fluid">
+                <img src="@/assets/graphs.jpg" class="img-fluid" alt="reports image" style="margin-top: 8%;">
+            </div>
+            <h2 style="padding-top: 5%;">Your reports</h2>
+            <h5>View and download your reports</h5>
         </div>
     </div>
 
