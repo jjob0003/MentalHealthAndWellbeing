@@ -35,11 +35,13 @@
             <h5>Check and manage your emails here</h5>
         </div>
         <div class="container-fluid col-md-3 text-center custom-font" style="height: auto; background-color: #ecf3f9;">
-            <div class="container-fluid">
-                <img src="@/assets/recordimg.jpg" class="img-fluid" alt="records icon" style="margin-top: 8%;">
-            </div>  
-            <h2 style="padding-top: 5%;">Patient records</h2>
-            <h5>Look up patient records</h5>
+            <router-link class="custom-font" to="/PatientRecords">
+                <div class="container-fluid">
+                    <img src="@/assets/recordimg.jpg" class="img-fluid" alt="records icon" style="margin-top: 8%;">
+                </div>  
+                <h2 style="padding-top: 5%;">Patient records</h2>
+                <h5>Look up all patient records</h5>
+            </router-link>
         </div>
         <div class="container-fluid col-md-3 text-center custom-font" style="height: auto; background-color: #ecf3f9;">
             <div class="container-fluid">
@@ -68,5 +70,6 @@
 .custom-font{
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: #1c4513;
+    text-decoration: none;
 }
 </style>

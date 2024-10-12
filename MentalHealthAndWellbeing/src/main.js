@@ -8,6 +8,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import PrimeVue from 'primevue/config';
 import Aura from '@primevue/themes/aura';
 import store from './store/store';
+import DataTable from 'primevue/datatable';
+import Column from 'primevue/column';
 // import { initializeApp } from "firebase/app";
 
 // const firebaseConfig = {
@@ -28,6 +30,9 @@ app.use(PrimeVue,{
         preset: Aura
     }
 });
+
+app.component('DataTable',DataTable);
+app.component('Column',Column);
 
 app.use(router);
 app.use(store);
