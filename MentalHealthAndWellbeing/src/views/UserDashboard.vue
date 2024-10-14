@@ -1,4 +1,21 @@
-<script setup>
+<script>
+
+export default{
+    mounted(){
+        const name = this.$route.query.firstName;
+        const email = this.$route.query.email;
+
+        this.name = name;
+        this.email = email;
+    },
+
+    data(){
+        return{
+            name: this.name,
+            email: this.email
+        };
+    }
+}
 
 </script>
 
@@ -20,7 +37,7 @@
             <h3>Logged in as user</h3>
         </div>
         <div style="padding-top: 8%;">
-            <h1>Dashboard- user</h1>
+            <h1>Welcome, {{ name }}</h1>
         </div>
 </div>
 

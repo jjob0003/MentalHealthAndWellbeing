@@ -58,9 +58,9 @@ import MockData from '@/MockData/MockData.json';
                 const userDoc = doc.data();
 
                 if(userDoc.role == "staff"){
-                    router.push('/staffDashboard')
+                    router.push({path: '/staffDashboard', query: {firstName: userDoc.firstName, email: userDoc.email}})
                 } else if(userDoc.role == "user"){
-                    router.push('/userDashboard')
+                    router.push({path: '/userDashboard', query: {firstName: userDoc.firstName, email: userDoc.email}})
                 } else{
                     console.log('Error! Username or Password not found')
                     userInput.value.username = errors.value.username;

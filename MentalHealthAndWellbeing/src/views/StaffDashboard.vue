@@ -1,4 +1,20 @@
-<script setup>
+<script>
+export default{
+    mounted(){
+        const name = this.$route.query.firstName;
+        const email = this.$route.query.email;
+
+        this.name = name;
+        this.email = email;
+    },
+
+    data(){
+        return{
+            name: this.name,
+            email: this.email
+        };
+    }
+}
 
 </script>
 
@@ -20,7 +36,7 @@
             <h3>Logged in as staff</h3>
         </div>
         <div style="padding-top: 8%;">
-            <h1>Staff Dashboard -name</h1>
+            <h1>Welcome, {{ name }}</h1>
         </div>
 </div>
 
@@ -28,11 +44,13 @@
     </div>
     <div class="row">
         <div class="container-fluid col-md-3 text-center custom-font" style="height: auto; background-color: #ecf3f9;">
-            <div class="container-fluid">
+            <router-link class="custom-font" to="/SendEmails">
+                <div class="container-fluid">
                 <img src="@/assets/emailimg.jpg" class="img-fluid" alt="email icon" style="margin-top: 8%;">
-            </div>
-            <h2 style="padding-top: 5%;">Emails</h2>
-            <h5>Check and manage your emails here</h5>
+                </div>
+                <h2 style="padding-top: 5%;">Emails</h2>
+                <h5>Check and manage your emails here</h5>
+            </router-link> 
         </div>
         <div class="container-fluid col-md-3 text-center custom-font" style="height: auto; background-color: #ecf3f9;">
             <router-link class="custom-font" to="/PatientRecords">
