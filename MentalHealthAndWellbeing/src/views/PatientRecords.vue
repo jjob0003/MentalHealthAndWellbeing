@@ -13,7 +13,6 @@ export default{
         const populateTable = async () => {
 
             try{
-
                 const q = query(collection(db, 'users'), where('role', '==', 'user'));
                 const querySnapshot = await getDocs(q);
 
@@ -36,29 +35,29 @@ export default{
     }
 };
 
-
-
 </script>
 
 <template>
     <div class="container-fluid col-md-3">
-        <h1 class="custom-font">
+        <h1 class="custom-font text-center">
             Patient Records 
         </h1>
     </div>
-    <DataTable :value="allUsers" paginator :rows="10" :rowsPerPageOptions="[5, 10, 20, 50]">
-        <Column field="firstName" header="First Name"></Column>
-        <Column field="lastName" header="Last Name"></Column>
-        <Column field="email" header="Email"></Column>
-        <Column field="viewReports" header=" ">
-            <template #body="slotProps">
-                <router-link to="/UserReports">
-                    View all reports
-                </router-link>
-            </template>
-        
-        </Column>
-    </DataTable>
+    <div>
+        <DataTable :value="allUsers" paginator :rows="10" :rowsPerPageOptions="[5, 10, 20, 50]">
+            <Column field="firstName" header="First Name" sortable style></Column>
+            <Column field="lastName" header="Last Name" sortable style></Column>
+            <Column field="email" header="Email" sortable style></Column>
+            <Column field="viewReports" header=" ">
+                <template #body="slotProps">
+                    <router-link to="/UserReports">
+                        View all reports
+                    </router-link>
+                </template>
+            
+            </Column>
+        </DataTable>
+    </div>
 
 </template>
 
@@ -67,6 +66,7 @@ export default{
 .custom-font{
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: #1c4513;
-}
+};
+
 
 </style>
