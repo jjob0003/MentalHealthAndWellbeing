@@ -72,6 +72,9 @@ export default{
     </div>
 
     <div class="container-fluid col-md-12" style="height: 130px;">
+        <div class="text-center">
+            <h5 class="mt-5 custom-font"> <router-link to="/StaffRecords">Find a mental health provider</router-link></h5>
+        </div>
     </div>
     <div class="container-fluid col-md-12" style="height: 150px; background-color: #515b49;">
     </div>

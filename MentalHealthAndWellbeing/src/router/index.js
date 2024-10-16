@@ -10,6 +10,7 @@ import PatientRecords from '@/views/PatientRecords.vue'
 import UserReports from '@/views/UserReports.vue'
 import ClinicMap from '@/views/ClinicMap.vue'
 import SendEmails from '@//views/SendEmails.vue'
+import StaffRecords from '@/views/StaffRecords.vue'
 
 const routes = [
   {
@@ -67,6 +68,11 @@ const routes = [
     name: 'SendEmails',
     component: SendEmails
   },
+  {
+    path: '/StaffRecords',
+    name: 'StaffRecords',
+    component: StaffRecords
+  }
 ]
 
 const router = createRouter({
