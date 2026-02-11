@@ -6,6 +6,12 @@ The application includes validated user authentication, structured navigation pa
 
 ## Features
 
+### Home Page
+
+### About Page
+
+### Emergency Help Page
+
 ### Authentication
 - User registration and login with input validation
 - Role-based access (Client or Staff)
@@ -21,12 +27,6 @@ The application includes validated user authentication, structured navigation pa
 - View and search patient records
 - Access appointment and schedule management interface (partial implementation)
 
-### Home Page
-
-### About Page
-
-### Emergency Help Page
-
 ### Technical and API Integrations
 - Mapbox API integration to display user location and nearby medical facilities
 - SendGrid for email functionality for communication between users and providers
@@ -37,6 +37,7 @@ The application includes validated user authentication, structured navigation pa
 - Database and Authentication: Firebase Authentication, Firebase Firestore
 - External APIs and other Services: Mapbox API (clinic search feature), SendGrid (email feature)
 - Design: UI/UX principles and wireframing
+- Deployment: Cloudflare Pages
 
 ## Demo
 A short video demonstrating the main features of this application and its user flow.
